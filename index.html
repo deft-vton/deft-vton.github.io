@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Decoding for Structured Language Models">
-  <meta name="keywords" content="CABS, Structure Language Model, Structured Object Decoding, Function Call, JSON generation">
+        content="Efficient Virtual Try-On with Consistent Generalised H-Transform">
+  <meta name="keywords" content="Virtual try-on, Diffusion generative model, scalable training, consistency model">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Google tag (gtag.js) -->
@@ -41,14 +41,19 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Confidence-Aware Sub-Structure Beam Search (CABS): Mitigating Hallucination in Structured Data Generation with Large Language Models</h1>
+          <h1 class="title is-1 publication-title">Efficient Virtual Try-On with Consistent Generalised H-Transform</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/chengwei-wei-23675a1b3/">Chengwei Wei</a><sup><span>&#9824;</span></sup>,</span>
+              <a href="https://www.linkedin.com/in/xingzi-xu-7b584016a">Xingzi Xu</a><sup><span>&#9824;</span></sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/qi-li-5575a65b">Qi Li</a><sup><span>&#9824;</span></sup>,</span>
             <span class="author-block">
-              <a href="https://www.amazon.science/author/kee-kiat-koo">Kee Kiat Koo</a></span>,<!--br-->
+              <a href="https://www.linkedin.com/in/shuwen-qiu-420321202">SHuwen Qiu</a></span>,<!--br-->
             <span class="author-block">
               <a href="https://www.amazon.science/author/amir-tavanaei">Amir Tavanaei</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/mh1795">Julien Han</a>,
             </span>
             <span class="author-block">
               <a href="https://www.amazon.science/author/karim-bouyarmane">Karim Bouyarmane</a>
@@ -60,7 +65,7 @@
           </div>
 
           <div class="is-size-6 publication-authors">
-            <span class="author-block new-line"><sup><span>&#9824;</span> </sup>University of Southern California, work done during internship at Amazon</span><br>
+            <span class="author-block new-line"><sup><span>&#9824;</span> </sup>Duke University, work done as an applied scientist intern at Amazon</span><br>
           </div>
 
           <div class="column has-text-centered">
@@ -105,17 +110,6 @@
 </section>
 
 
-<section class="hero is-light">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" class="responsive-video" autoplay muted playsinline height="100%" controls>
-        <source src="./static/videos/CABS_LLM_SHORT.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -123,7 +117,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large Language Models (LLMs) have facilitated structured data generation, with applications in domains like tabular data, document databases, product catalogs, etc. However, concerns persist about generation veracity due to incorrect references or hallucinations, necessitating the incorporation of some form of model confidence for mitigation. Existing confidence estimation methods on LLM generations primarily focus on the confidence at the individual token level or the entire output sequence level, limiting their applicability to structured data generation, which consists of an intricate mix of both independent and correlated entries at the sub-structure level. In this paper, we first investigate confidence estimation methods for generated sub-structure-level data. We introduce the concept of Confidence Network that applies on the hidden state of the LLM transformer, as a more targeted estimate than the traditional token conditional probability. We further propose Confidence-Aware sub-structure Beam Search (CABS), a novel decoding method operating at the sub-structure level in structured data generation. CABS enhances the faithfulness of structured data generation by considering confidence scores from the Confidence Network for each sub-structure-level data and iteratively refining the prompts. Results show that CABS outperforms traditional token-level beam search for structured data generation by 16.7% Recall at 90% precision averagely on the problem of product attribute generation.
+            Diffusion models enables high-quality virtual try-on (VTO) with their impressive image synthesis abilities. Despite the extensive end-to-end training of large pre-trained models involved in current VTO methods, real-world applications often prioritize limited training budgets for VTO. To solve this obstacle, we apply Doob’s h-transform efficient fine tuning (DEFT) for adapting large pre-trained unconditional models for downstream VTO abilities. DEFT freezes the pre-trained model’s parameters and trains a small h-transform network to learn a conditional h-transform. Based on a $2.4$B parameters pre-trained score network and a $83.7$M pre-trained autoencoder, the proposed framework trains a $35.3$M parameter h-transform network, only ~$1.42$\% of the frozen parameters. To further improve DEFT’s performance, and decrease existing models’ inference time, we additionally propose an adaptive consistency loss. Consistency training distills slow but performing diffusion models into a fast one while retaining performances by enforcing consistencies along the inference path. Inspired by constrained optimization, instead of distillation, we combine the consistency loss and the denoising score matching loss in a data-adaptive manner for fine-tuning existing VTO models at a low cost. Empirical results show proposed DEFT-VTO method achieves SOTA performances on VTO tasks, as well as a number of function evaluations as low as 15, while maintaining competitive performances.
           </p>
         </div>
       </div>
