@@ -1,2 +1,2 @@
 # deftvton.github.io
-Project page for the DEFT-VTON paper
+Project page for paper: Efficient Virtual Try-On with Consistent Generalised H-Transform
